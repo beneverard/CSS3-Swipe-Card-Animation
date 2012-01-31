@@ -1,0 +1,64 @@
+html, body {
+	background-color: rgba(0, 0, 0, .05);
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.animation(@animation) {
+	-webkit-animation: @animation;
+	   -moz-animation: @animation;
+	   	-ms-animation: @animation;
+			animation: @animation;
+}
+
+@-webkit-keyframes swipe-card {
+	0%			{ top: 0px; opacity: 0; }
+	10%, 50%	{ top: 0px; opacity: 1; }
+	65%			{ top: 260px; opacity: 1; }
+	75%, 100%	{ top: 260px; opacity: 0; }
+}
+
+@-moz-keyframes swipe-card {
+	0%			{ top: 0px; opacity: 0; }
+	10%, 50%	{ top: 0px; opacity: 1; }
+	65%			{ top: 260px; opacity: 1; }
+	75%, 100%	{ top: 260px; opacity: 0; }
+}
+@-ms-keyframes swipe-card {
+	0%			{ top: 0px; opacity: 0; }
+	10%, 50%	{ top: 0px; opacity: 1; }
+	65%			{ top: 260px; opacity: 1; }
+	75%, 100%	{ top: 260px; opacity: 0; }
+}
+
+	
+.swipe-card {
+	margin: auto;
+	position: relative;
+	display: block;
+	width: 163px;
+	height: 520px;
+	img {
+		position: absolute;  
+	}
+	.swipe-left {
+		top: 90px;
+		left: 0px;  
+		z-index: 3;
+	}
+	
+	.swipe-right {
+		top: 97px;
+		left: 65px;  
+		z-index: 1
+	}
+	.card {
+		z-index: 2;  
+		left: 0px;
+		top: 0px;
+		
+		.animation(swipe-card 4s ease-in-out infinite normal);
+		
+	}  
+} 
